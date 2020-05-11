@@ -1,38 +1,68 @@
-body{
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-#container {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  
-}
-#navbar_container {
-    
-    display: block;
-}
-
-#logo_box {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 185px;
-    
-    
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 61px 260px 1fr 42px;
+    grid-template-areas:
+    "header_l header_r"
+    "logo logo"
+    "search search"
+    "footer_l footer_r";
+    height: 100%;
+    width: 100%;  
 }
 
-#search_box {
-   
+.navbar_container_l{
+    grid-area: header_l;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-top: 25px;
-    
-    
 }
+
+.navbar_container_r{
+    grid-area: header_r;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo_box{
+    grid-area: logo;
+    justify-self: center;
+    align-self: end;
+    padding-bottom: 20px;
+}
+
+.search_box{
+    grid-area: search;
+    justify-self: center;
+}
+
+.footer_container_l{
+    
+    color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.05);
+    grid-area: footer_l;
+    display: flex;
+    align-items: center;
+    
+
+}
+.footer_container_r{
+    
+    color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.05);
+    grid-area: footer_r;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
 
 .search {
     border-radius: 30px;
@@ -60,51 +90,43 @@ body{
 .navbar{
     font-size: 13px;
     font-family: arial, sans-serif;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.8);
     list-style-type: none;
+    padding-left: 7px;
+    padding-right: 7px;
     margin: 0;
-    padding: 15px;
-    
 }
 
 .link:hover{
     text-decoration: underline;
 }
 
-li {
+.li_h_l {
     float: left;
+    padding-left: 18px;
 }
 
-#gmail{
-    float: right;
-
-}
-#images{
-    float: right;
+.li_h_r {
+    float: left;
+    padding-right: 18px;
 }
 
-#footer_container{
-    display: block;
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    height: 45px;
-    color: rgba(0, 0, 0, 0.7);
-    background-color: rgba(0, 0, 0, 0.05);
-    width: 100vw;
-    
-
+.li_f_l {
+    float: left;
+    padding-left: 18px;
 }
+
+.li_f_r {
+    float: left;
+    padding-right: 18px;
+}
+
+
 .footer_bar{
     font-size: 14px;
     font-family: arial, sans-serif;
     list-style-type: none;
     margin: 0;
-    padding: 7px;
+    padding: 0;
     
-}
-
-.link{
-    display: block;
-    padding: 8px;
 }
